@@ -1,0 +1,20 @@
+{
+  "LinkedList": {
+    "weight": 100,
+    "suitesWeights": {
+      "#constructor": 5,
+      "#append": 10,
+      "#head": 5,
+      "#tail": 5,
+      "#clear": 5,
+      "#at": 10,
+      "#insertAt": 10,
+      "#isEmpty": 5,
+      "#deleteAt": 10,
+      "#reverse": 15,
+      "#isEmpty": 5,
+      "#indexOf": 10,
+      "chaining": 5
+    }
+  }
+}
