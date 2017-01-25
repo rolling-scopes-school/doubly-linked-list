@@ -1,8 +1,9 @@
 ### Doubly linked list
+
+---
 ⚠️ DO NOT SUBMIT PRS TO THIS REPO ⚠️
 
 
----
 
 ### Prerequisites
 * Install [nodejs](https://nodejs.org/en/) (>= v6.9.4)
