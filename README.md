@@ -1,4 +1,4 @@
-### Doubly linked list task
+### Doubly linked list
 ---
 
 ### Prerequisites
