@@ -5,5 +5,7 @@ class Node {
         this.next = next;
     }
 }
-
+function La () {
+    return 20;
+}
 module.exports = Node;
