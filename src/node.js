@@ -6,6 +6,9 @@ class Node {
     }
 }
 function La () {
-    return 20;
+    return 21;
+}
+function La2 () {
+    return 21;
 }
 module.exports = Node;
