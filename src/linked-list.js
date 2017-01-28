@@ -2,9 +2,9 @@ const Node = require('./node');
 
 class LinkedList {
     constructor() {
-        this._head=null;
-        this._tail=null;
-        this.length=0;        
+        this._head = null;
+        this._tail = null;
+        this.length = 0;
     }
     /*Append new node to the LinkedList 
      * If LinkedList is empty head and tail are new node.
@@ -15,13 +15,13 @@ class LinkedList {
         var node = new Node(data);
         if (this.isEmpty()) {
             this._head = node;
-        }else
-        {
+        } else {
             node.prev = this._tail;
             this._tail.next = node;
         }
         this._tail = node;
         this.length++;
+        return this;
     }
 
     head() {
@@ -54,17 +54,20 @@ class LinkedList {
     }
 
     insertAt(index, data) {
+        if (this.length === 0 || this.length === index) {
+            this.append(data);
+            return this;
+        }
         var current = this.findNode(index);
         if (current) {
             current.data = data;
-            return true;
         }
-        return false;
+        return this;
     }
 
     /*Returns true if LinkedList is empty otherwise returns false*/
     isEmpty() {
-        if (this._head==null) {
+        if (this._head == null) {
             return true;
         }
         return false;
@@ -74,6 +77,7 @@ class LinkedList {
         this._head = null;
         this._tail = null;
         this.length = 0;
+        return this;
     }
 
     deleteAt(index) {
@@ -90,9 +94,8 @@ class LinkedList {
                 this._head = current.next;
             }
             this.length--;
-            return true;
         }
-        return false;
+        return this;
     }
 
     reverse() {
@@ -110,6 +113,7 @@ class LinkedList {
                 current = current.next;
             }
         }
+        return this;
     }
 
     indexOf(data) {
