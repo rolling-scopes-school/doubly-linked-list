@@ -32,9 +32,36 @@ class LinkedList {
         return this._tail.data;
     }
 
-    at(index) {}
+    findNode(index) {
+        var current = this._head;
+        if (index >= 0 && index < this.length) {
+            for (var i = 0; i < this.length; i++) {
+                if (i === index) {
+                    return current;
+                }
+                current = current.next;
+            }
+        }
+        return null;
+    }
 
-    insertAt(index, data) {}
+    at(index) {
+        var current = this.findNode(index);
+        if (current) {
+            return current.data;
+        }
+        return undefined;
+    }
+
+    insertAt(index, data) {
+        var current = this.findNode(index);
+        if (current) {
+            current.data = data;
+            return true;
+        }
+        return false;
+    }
+
     /*Returns true if LinkedList is empty otherwise returns false*/
     isEmpty() {
         if (this._head==null) {
@@ -49,7 +76,18 @@ class LinkedList {
 
     reverse() {}
 
-    indexOf(data) {}
+    indexOf(data) {
+        var current = this._head;
+        var i = 0;
+        while (current) {
+            if (current.data === data) {
+                return i;
+            }
+            current = current.next;
+            i++;
+        }
+        return -1;
+    }
 }
 
 module.exports = LinkedList;
