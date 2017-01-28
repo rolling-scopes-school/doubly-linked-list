@@ -25,11 +25,11 @@ class LinkedList {
     }
 
     head() {
-        return this._head.data;
+        return this._head === null ? null : this._head.data;
     }
 
     tail() {
-        return this._tail.data;
+        return this._tail === null ? null : this._tail.data;
     }
 
     findNode(index) {
@@ -70,11 +70,47 @@ class LinkedList {
         return false;
     }
 
-    clear() {}
+    clear() {
+        this._head = null;
+        this._tail = null;
+        this.length = 0;
+    }
 
-    deleteAt(index) {}
+    deleteAt(index) {
+        var current = this.findNode(index);
+        if (current) {
+            if (current.next) {
+                current.next.prev = current.prev;
+            } else {
+                this._tail = current.prev;
+            }
+            if (current.prev) {
+                current.prev.next = current.next;
+            } else {
+                this._head = current.next;
+            }
+            this.length--;
+            return true;
+        }
+        return false;
+    }
 
-    reverse() {}
+    reverse() {
+        if (this.length > 1) {
+            var temp = this._head;
+            this._head = this._tail;
+            this._tail = temp;
+
+
+            var current = this._head;
+            while (current) {
+                temp = current.next;
+                current.next = current.prev;
+                current.prev = temp;
+                current = current.next;
+            }
+        }
+    }
 
     indexOf(data) {
         var current = this._head;
