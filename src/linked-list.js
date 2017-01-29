@@ -13,7 +13,9 @@ class LinkedList {
 
     insertAt(index, data) {}
 
-    isEmpty() {}
+    isEmpty() {
+        return this.head === null;
+    }
 
     clear() {}
 
