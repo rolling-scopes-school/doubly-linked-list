@@ -1,7 +1,7 @@
 const Node = require('./node');
 
 class LinkedList {
-    constructor() {
+    constructor() { 
         this.length = 0;
         this._tail = null;
         this._head = null;
@@ -52,25 +52,24 @@ class LinkedList {
         if (index == 0){
             this._head.prev = node;
             this._head = node;
-            return this.data; 
+            return this.data;             
         }
         else if (index == this.length){
             this._tail.next = currentNode;
             this._tail = this._tail.next;
             currentNode = node;
-            return this.data;
+            return this.data;            
         }
         else {
             while(count < index){
                 currentNode = currentNode.next;
                 count++;
             }
-            
             node.prev = currentNode.prev;
             currentNode.prev.next = node;
             currentNode.prev = node;
             node.next = currentNode;
-            return this;
+            return node;
         } 
     }
 
@@ -87,6 +86,7 @@ class LinkedList {
         this._head.data = null;
         this.length = 0;
         this._tail.data = null;
+        return this;
     }
 
     deleteAt(index) {
