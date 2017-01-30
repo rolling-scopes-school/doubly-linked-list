@@ -18,6 +18,8 @@ class LinkedList {
         }
 
         this.length++;
+
+        return this;
     }
 
     head() {
@@ -34,6 +36,7 @@ class LinkedList {
 
     insertAt(index, data) {
         this.data[index] = data;
+        return this;
     }
 
     isEmpty() {
@@ -46,25 +49,22 @@ class LinkedList {
         for (var i = this.data.length - 1; i >= 0; i--) {
             this.data[i] = null;
         }
+        return this;
     }
 
     deleteAt(index) {
         this.data.splice(index, 1)
         this.length--;
+        return this;
     }
 
     reverse() {
         this.data.reverse()
+        return this;
     }
 
     indexOf(data) {
-        for (var i = 0; i < this.data.length; i++) {
-            if (this.data[i] === data) {
-                return i;
-            } else {
-                console.log(this.data[i] != data);
-            }
-        }
+        return this.data.indexOf(data);
     }
 }
 
