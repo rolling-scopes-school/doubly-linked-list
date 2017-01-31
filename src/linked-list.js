@@ -1,9 +1,22 @@
 const Node = require('./node');
 
 class LinkedList {
-    constructor() {}
+    constructor()
+    { const list = new LinkedList();
+     this.length=0;
+    }
 
-    append(data) {}
+    append(data)
+    {
+    const data = 42;
+
+    const list = new LinkedList();
+
+    list.append(data);
+
+    expect(list._tail).to.be.an.instanceof(Node)
+    expect(list._head).to.be.an.instanceof(Node)
+    }
 
     head() {}
 
