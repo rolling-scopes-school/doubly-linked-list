@@ -38,7 +38,7 @@ class LinkedList {
     }
 
     at(index) {
-        if (index <= this.length && index >= 0) {
+        if (index <= this.length-1 && index >= 0) {
             var node = this._head;
             var i = 0;
             while (i != index) {
@@ -69,13 +69,36 @@ class LinkedList {
 
 
     clear() {
-        this.length == 0;
+        this.length = 0;
+        this._head = null;
+        this._tail = null;
         return this;
     }
 
-    deleteAt(index) {}
+    deleteAt(index) {
+        if (index <= this.length-1 && index >= 0) {
+            var node = this._head;
+            var i = 0;
+             while (i != this.length - 1) {
+                node.data = node.next.data;
+                node = node.next;
+                i++;
+            }
+            node.data = null;
+            node.next = null;
+            return this;
+        } 
+    }
 
-    reverse() {}
+    reverse() {
+        var i = 0;
+        while (i < Math.floor(this.length/2)) {
+            this._head.data = this._tail.data;
+            this._head = this._head.next ;
+            this._tail = this._tail.prev;
+            i++;
+        } return this;
+    }
 
     indexOf(data) {
         var index = 0;
