@@ -42,7 +42,12 @@ class LinkedList {
     	}
     }
 
-    at(index) {}
+    at(index) {
+    	if (this.length!=0){
+    		return(this.linkedlist[index].data);
+    	}
+
+    }
 
     insertAt(index, data) {}
 
