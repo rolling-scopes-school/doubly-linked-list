@@ -5,21 +5,42 @@ class LinkedList {
     	this.length=0;
     	this._head=null;
     	this._tail=null;
+    	this.linkedlist=[];
+    	
+    	
     }
 
     append(data) {
     	var node=new Node(data);
 
-    	if (this._head==null) {
+    	if (this.length==0) {
     		this._head=node;
     		this._tail=node;
-    		this.length++;}
+		}
+		
+		else {this.linkedlist[this.length-1].next=node;
+			node.prev=this.linkedlist[this.length];
+		}
+
+		this.linkedlist.push(node);
+		this.length++;
+
+
+
 
     }
 
-    head() {}
+    head() {
+    	if (this.length!=0) {
+    		return(this.linkedlist[0].data);
+    	}
+    }
 
-    tail() {}
+    tail() {
+    	if (this.length!=0){
+    		return(this.linkedlist[this.length-1].data);
+    	}
+    }
 
     at(index) {}
 
