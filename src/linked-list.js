@@ -49,7 +49,12 @@ class LinkedList {
 
     }
 
-    insertAt(index, data) {}
+    insertAt(index, data) {
+    	if (this.length!=0) {
+    		this.linkedlist[index].data=data;
+    	}
+
+    }
 
     isEmpty() {
        	return(this.length==0);
