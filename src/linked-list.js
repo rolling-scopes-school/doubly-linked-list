@@ -73,7 +73,15 @@ class LinkedList {
         }
     }
 
-    deleteAt(index) {}
+    deleteAt(index) {
+        if (this.length!=0) {
+            this.linkedlist.splice(index-1,1);
+            this.linkedlist[index-1].next=this.linkedlist[index];
+            this.linkedlist[index].prev=this.linkedlist[index-1];
+            this.length--;
+        }
+
+    }
 
     reverse() {}
 
