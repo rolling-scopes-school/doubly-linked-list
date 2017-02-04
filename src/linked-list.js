@@ -34,12 +34,16 @@ class LinkedList {
     	if (this.length!=0) {
     		return(this.linkedlist[0].data);
     	}
+        else {return(null)};
+       
     }
 
     tail() {
     	if (this.length!=0){
     		return(this.linkedlist[this.length-1].data);
     	}
+        else {return(null)};
+
     }
 
     at(index) {
@@ -60,7 +64,14 @@ class LinkedList {
        	return(this.length==0);
     }
 
-    clear() {}
+    clear() {
+        if (this.length!=0) {
+            while(this.length!=0) {
+                this.linkedlist.pop();
+                this.length--;
+            }
+        }
+    }
 
     deleteAt(index) {}
 
