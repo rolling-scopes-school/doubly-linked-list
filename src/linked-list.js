@@ -25,6 +25,8 @@ class LinkedList {
 		this.linkedlist.push(node);
 		this.length++;
 
+        return(this)
+
 
 
 
@@ -57,6 +59,7 @@ class LinkedList {
     	if (this.length!=0) {
     		this.linkedlist[index].data=data;
     	}
+        return(this)
 
     }
 
@@ -80,11 +83,13 @@ class LinkedList {
             this.linkedlist[index].prev=this.linkedlist[index-1];
             this.length--;
         }
+      
+        return(this)
 
     }
 
     reverse() {
-    	if (this.length!=0) {
+    	if (this.length!=1) {
     		this.linkedlist.reverse();
     		this.linkedlist[0].prev=null;
     		this.linkedlist[0].next=this.linkedlist[1];
@@ -94,7 +99,8 @@ class LinkedList {
     			this.linkedlist[i].prev=this.linkedlist[i-1];
     			this.linkedlist[i].next=this.linkedlist[i+1];
     		}
-    	}
+    	} else {return(null)}
+        return(this)
     }
 
     indexOf(data) {
