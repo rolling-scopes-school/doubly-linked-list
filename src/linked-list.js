@@ -89,7 +89,7 @@ class LinkedList {
     }
 
     reverse() {
-    	if (this.length!=1) {
+    	if (this.length!=0) {
     		this.linkedlist.reverse();
     		this.linkedlist[0].prev=null;
     		this.linkedlist[0].next=this.linkedlist[1];
