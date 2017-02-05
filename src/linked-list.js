@@ -83,7 +83,19 @@ class LinkedList {
 
     }
 
-    reverse() {}
+    reverse() {
+    	if (this.length!=0) {
+    		this.linkedlist.reverse();
+    		this.linkedlist[0].prev=null;
+    		this.linkedlist[0].next=this.linkedlist[1];
+    		this.linkedlist[this.length-1].next=null;
+    		this.linkedlist[this.length-1].prev=this.linkedlist[this.length-2];
+    		for (var i=1;i<this.length-1;i++) {
+    			this.linkedlist[i].prev=this.linkedlist[i-1];
+    			this.linkedlist[i].next=this.linkedlist[i+1];
+    		}
+    	}
+    }
 
     indexOf(data) {}
 }
