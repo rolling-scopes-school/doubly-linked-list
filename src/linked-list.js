@@ -58,8 +58,8 @@ class LinkedList {
     insertAt(index, data) {
     	if (this.length!=0) {
     		this.linkedlist[index].data=data;
-    	}
-        return(this)
+    	} else {this.append(data)}
+        return(this) 
 
     }
 
@@ -74,6 +74,7 @@ class LinkedList {
                 this.length--;
             }
         }
+        return(this)
     }
 
     deleteAt(index) {
