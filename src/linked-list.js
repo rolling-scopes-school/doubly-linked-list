@@ -97,7 +97,15 @@ class LinkedList {
     	}
     }
 
-    indexOf(data) {}
+    indexOf(data) {
+    	if (this.length!=0) {
+    		for (var i=0; i<this.length; i++) {
+    			if (this.linkedlist[i].data===data) {return(i)}
+    		}
+    	return -1;
+
+    	}
+    }
 }
 
 module.exports = LinkedList;
