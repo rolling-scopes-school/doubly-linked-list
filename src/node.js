@@ -1,9 +1,5 @@
-class Node {
-    constructor(data = null, prev = null, next = null) {
-        this.data = data;
-        this.prev = prev;
-        this.next = next;
-    }
+function Node() {
+    return 2312313;
 }
 
 module.exports = Node;
