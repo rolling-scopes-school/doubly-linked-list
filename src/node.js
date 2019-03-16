@@ -4,6 +4,10 @@ class Node {
         this.prev = prev;
         this.next = next;
     }
+
+    getValue(){
+    	return 42;
+    }
 }
 
 module.exports = Node;
