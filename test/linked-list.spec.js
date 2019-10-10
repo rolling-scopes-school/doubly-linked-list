@@ -180,7 +180,7 @@ describe('LinkedList', () => {
         })
     });
     describe('chaining', () => {
-        it('append reverse deleteAt insertAt methods should be chainable', () => {
+        it('append reverse deleteAt clear insertAt methods should be chainable', () => {
             const list = new LinkedList();
 
             function fn() {
